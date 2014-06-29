@@ -10,7 +10,7 @@ class ManufacturersController < ApplicationController
 	def create
 		@manufacturer = Manufacturer.new(user_params)
 		if @manufacturer.save
-      redirect_to manufacturers_path(@manufacturer)
+      redirect_to manufacturers_path
     else
       flash[:notice] = "Please correct the errors and try again"
       render :new

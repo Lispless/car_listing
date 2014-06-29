@@ -10,7 +10,8 @@ class CarsController < ApplicationController
 	def create
 		@car = Car.new(user_params)
 		if @car.save
-      redirect_to manufacturers_path(@car)
+			flash[:notice] = 'Gratz'
+      redirect_to cars_path
     else
       flash[:notice] = "Please correct the errors and try again"
       render :new
@@ -18,6 +19,6 @@ class CarsController < ApplicationController
 	end
 
 	def user_params
-    params.require(:car).permit(:manufacturer, :color, :year, :mileage )
+    params.require(:car).permit( :manufacturer, :color, :year, :mileage, :description )
   end
 end

@@ -1,11 +1,13 @@
 <h1>INDEX</h1>
 
+<%= link_to 'Add manufacturer', new_manufacturer_path %>
+
 <ul>
 	<% @manufacturers.each do |manufacturer| %>
 		<li>
 			<%= manufacturer.name + ', ' + manufacturer.country %>
 		</li>
+		<br />
 	<% end %>
 </ul>
 
-<%= link_to 'Add manufacturer', new_manufacturer_path %>
