@@ -1,5 +1,5 @@
 class ManufacturersController < ApplicationController
 	def index
-		@manufacturers = Manufacturers.all
+		@manufacturers = Manufacturer.all
 	end
 end

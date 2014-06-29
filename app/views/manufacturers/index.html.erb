@@ -1,3 +1,11 @@
 <h1>INDEX</h1>
 
+<ul>
+	<% @manufacturers.each do |manufacturer| %>
+		<li>
+			<%= manufacturer.name %>
+		</li>
+	<% end %>
+</ul>
+
 <%= link_to 'Add manufacturer' %>
