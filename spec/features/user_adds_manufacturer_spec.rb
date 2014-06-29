@@ -17,6 +17,6 @@ feature 'User adds a manufacturer' do
 		visit '/manufacturers'
 		click_link 'Add manufacturer'
 		click_button 'Submit'
-		expect(page).to_not have_content(manufacturer.name)
+		expect(page).to have_content('There were errors with your submission:')
 	end
 end
