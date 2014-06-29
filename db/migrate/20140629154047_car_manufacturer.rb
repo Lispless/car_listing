@@ -5,5 +5,6 @@ class CarManufacturer < ActiveRecord::Migration
   		t.string :country, null: false
 
   		t.timestamps
+  	end
   end
 end
