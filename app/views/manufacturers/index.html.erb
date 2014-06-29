@@ -3,7 +3,7 @@
 <ul>
 	<% @manufacturers.each do |manufacturer| %>
 		<li>
-			<%= manufacturer.name %>
+			<%= manufacturer.name + ', ' + manufacturer.country %>
 		</li>
 	<% end %>
 </ul>

@@ -8,11 +8,15 @@ feature 'User adds a manufacturer' do
 		fill_in 'Manufacturer Name', with: manufacturer.name
 		fill_in 'Manufacturer Country', with: manufacturer.country
 		click_button 'Submit'
-		expect(page).to have_content('manufacturer.name')
-		expect(page).to have_content('manufacturer.country')
+		expect(page).to have_content(manufacturer.name)
+		expect(page).to have_content(manufacturer.country)
 	end
 
 	scenario 'If user doesn\'t provide both name and country, an error is thrown' do
-		#expect(page).to have_content('test')
+		manufacturer = FactoryGirl.create(:manufacturer)
+		visit '/manufacturers'
+		click_link 'Add manufacturer'
+		click_button 'Submit'
+		expect(page).to_not have_content(manufacturer.name)
 	end
 end
