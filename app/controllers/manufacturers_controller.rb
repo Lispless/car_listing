@@ -8,12 +8,16 @@ class ManufacturersController < ApplicationController
 	end
 
 	def create
-		@manufacturer = Manufacturer.new(params)
+		@manufacturer = Manufacturer.new(user_params)
 		if @manufacturer.save
-      redirect_to shop_path(@manufacturer)
+      redirect_to manufacturer_path(@manufacturer)
     else
       flash[:notice] = "Please correct the errors and try again"
       render :new
     end
 	end
+
+	def user_params
+    params.require(:manufacturer).permit(:name, :country)
+  end
 end
