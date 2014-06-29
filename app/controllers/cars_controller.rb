@@ -9,7 +9,11 @@ class CarsController < ApplicationController
 
 	def create
 		@car = Car.new(user_params)
-		if @car.save
+		if user_params[:year].to_i < 1920
+			flash[:notice] = 'Please enter a year of 1920 or higher'
+			render :new
+		elsif
+			@car.save
 			flash[:notice] = 'Gratz'
       redirect_to cars_path
     else
