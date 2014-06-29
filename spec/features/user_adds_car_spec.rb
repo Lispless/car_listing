@@ -4,7 +4,7 @@ feature 'User adds a car' do
 	scenario 'User adds a car and is shown the index' do
 		car = FactoryGirl.create(:car)
 		visit '/cars'
-		cick_link 'Add a car'
+		click_link 'Add a car'
 		fill_in 'Name of manufacturer', with: car.manufacturer
 		fill_in 'Color', with: car.color
 		fill_in 'Year', with: car.year
