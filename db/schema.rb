@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140629154115) do
 
-  create_table "car", force: true do |t|
+  create_table "cars", force: true do |t|
     t.string   "manufacturer", null: false
     t.string   "color",        null: false
     t.integer  "year",         null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140629154115) do
     t.datetime "updated_at"
   end
 
-  create_table "manufacturer", force: true do |t|
+  create_table "manufacturers", force: true do |t|
     t.string   "name",       null: false
     t.string   "country",    null: false
     t.datetime "created_at"

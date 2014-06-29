@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'User adds a manufacturer' do
 	scenario 'If user adds manufacturer name and country info is recorded' do
+		manufacturer = FactoryGirl.create(:manufacturer)
+		visit '/manufacturers'
 		click_link 'Add manufacturer'
 		fill_in 'Manufacturer Name', with: manufacturer.name
 		fill_in 'Manufacturer Country', with: manufacturer.country
