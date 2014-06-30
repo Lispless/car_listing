@@ -17,5 +17,12 @@ feature 'User adds a car' do
 	end
 
 	scenario 'If user doesn\'t fill in required feilds, they are presented w/ an error.' do
+		car = FactoryGirl.create(:car)
+		visit '/cars'
+		click_link 'Add a car'
+		fill_in 'Year', with: car.year
+		click_button 'Submit'
+		expect(page).to have_content("Mileage can't be blank")
+		expect(page).to have_content("Color can't be blank")
 	end
 end
