@@ -1,0 +1,24 @@
+<h1>Car Index Page</h1>
+
+<%= link_to 'Add a car', new_car_path %>
+
+<ul>
+	<% @cars.each do |car| %>
+		<li>
+			<%= car.manufacturer %>
+		</li>
+		<li>
+			<%= car.color %>
+		</li>
+		<li>
+			<%= car.year %>
+		</li>
+		<li>
+			<%= car.mileage %>
+		</li>
+		<li>
+			<%= car.description %>
+		</li>
+		<br />
+	<% end %>
+</ul>
